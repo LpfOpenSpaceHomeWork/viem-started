@@ -1,17 +1,12 @@
-import { ORBIT_NFT_ABI } from "./abi";
-import { createPublicClient, getContract, http } from "viem";
-import { mainnet } from "viem/chains";
-
-const client = createPublicClient({
-  chain: mainnet,
-  transport: http(),
-});
+import { ORBIT_NFT_ABI } from "./orbit-nft-abi";
+import { publicClient } from "../client";
+import { getContract } from "viem";
 
 const ORBIT_NFT_ADDRESS = "0x0483b0dfc6c78062b9e999a82ffb795925381415" as const;
 
 const orbitContract = getContract({
   abi: ORBIT_NFT_ABI,
-  client,
+  client: publicClient,
   address: ORBIT_NFT_ADDRESS,
 });
 

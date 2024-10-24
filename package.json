@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "tsx index.ts"
+    "read-orbit-nft-contract": "tsx scripts/read-orbit-nft-contract.script.ts",
+    "read-usdc-event-logs": "tsx scripts/read-usdc-event-logs.script.ts"
   },
   "keywords": [],
   "author": "",
