@@ -1,4 +1,4 @@
-import { publicClient } from "../client";
+import { mainnetPublicClient } from "../client";
 import { parseAbiItem } from "viem";
 
 const USDC_CONTRACT_ADDRESS =
@@ -6,10 +6,10 @@ const USDC_CONTRACT_ADDRESS =
 const USDC_DECIMALS = 6;
 
 export const readUSDCEventLogs = async () => {
-  const currentBlockNum = await publicClient.getBlockNumber({
+  const currentBlockNum = await mainnetPublicClient.getBlockNumber({
     cacheTime: 0,
   });
-  const eventLogs = await publicClient.getLogs({
+  const eventLogs = await mainnetPublicClient.getLogs({
     address: USDC_CONTRACT_ADDRESS,
     event: parseAbiItem(
       "event Transfer(address indexed from, address indexed to, uint256 value)"
